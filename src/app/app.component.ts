@@ -18,7 +18,8 @@ export class AppComponent {
         //         "NIT": "900210398-1"
         //     }
         // }
-        console.log('Hola Mundo')
+        console.log('Hola Mundo');
+        const parse = new DOMParser();
         const JSON: any = {}
         const fileInput = document.createElement('input');
         fileInput.type = 'file';
@@ -45,39 +46,13 @@ export class AppComponent {
                 JSON.senderParty.companyID = xmlDoc.querySelector('CompanyID').textContent;
                 JSON.senderParty.taxLevelCode = xmlDoc.querySelector('TaxLevelCode').textContent;
                 JSON.senderParty.ID = xmlDoc.querySelector('SenderParty PartyTaxScheme TaxScheme ID').textContent;
-                JSON.factura = {codigo: xmlDoc.querySelector('Description')}
-
-                // Hola mundo
-                // Entonces
                 
+                const xmlDoc2 = parse.parseFromString(xmlDoc.querySelector('ExternalReference Description').textContent, 'text/xml');
 
-                // JSON. = xmlDoc.querySelector('').textContent;
-                // JSON. = xmlDoc.querySelector('').textContent;
-                // JSON. = xmlDoc.querySelector('').textContent;
-                // JSON. = xmlDoc.querySelector('').textContent;
-                // JSON. = xmlDoc.querySelector('').textContent;
-                // JSON. = xmlDoc.querySelector('').textContent;
-                // JSON. = xmlDoc.querySelector('').textContent;
-                // JSON. = xmlDoc.querySelector('').textContent;
-                // JSON. = xmlDoc.querySelector('').textContent;
-                // JSON. = xmlDoc.querySelector('').textContent;
-                // JSON. = xmlDoc.querySelector('').textContent;
-                // JSON. = xmlDoc.querySelector('').textContent;
-                // JSON. = xmlDoc.querySelector('').textContent;
-                // JSON. = xmlDoc.querySelector('').textContent;
-                // JSON. = xmlDoc.querySelector('').textContent;
-                // JSON. = xmlDoc.querySelector('').textContent;
-                // JSON. = xmlDoc.querySelector('').textContent;
-                // JSON. = xmlDoc.querySelector('').textContent;
-                // JSON. = xmlDoc.querySelector('').textContent;
-                // JSON. = xmlDoc.querySelector('').textContent;
-                // JSON. = xmlDoc.querySelector('').textContent;
-                // JSON. = xmlDoc.querySelector('').textContent;
-                // JSON. = xmlDoc.querySelector('').textContent;
-                // JSON. = xmlDoc.querySelector('').textContent;
-                // JSON. = xmlDoc.querySelector('').textContent;
-                // const titulo = tituloElement.textContent;
-                console.log(JSON)
+                JSON.factura = {codigo: xmlDoc2.querySelector('OrderReference').textContent};
+
+                // console.log(xmlDoc2);
+                console.log(JSON);
 
             };
             reader.readAsText(file);
