@@ -48,6 +48,7 @@ export class AppComponent {
                 JSON.factura = {codigo: xmlDoc.querySelector('Description')}
 
                 // Hola mundo
+                // Entonces
                 
 
                 // JSON. = xmlDoc.querySelector('').textContent;
