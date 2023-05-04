@@ -46,6 +46,8 @@ export class AppComponent {
                 JSON.senderParty.taxLevelCode = xmlDoc.querySelector('TaxLevelCode').textContent;
                 JSON.senderParty.ID = xmlDoc.querySelector('SenderParty PartyTaxScheme TaxScheme ID').textContent;
                 JSON.factura = {codigo: xmlDoc.querySelector('Description')}
+
+                // Hola mundo
                 
 
                 // JSON. = xmlDoc.querySelector('').textContent;
